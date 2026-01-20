@@ -1,0 +1,57 @@
+# Browser Automation Studio 配置文件
+
+server:
+  host: "0.0.0.0"
+  port: 8080
+  mode: "debug"  # debug, release
+
+database:
+  driver: "postgres"
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "postgres"
+  dbname: "browser_automation"
+  sslmode: "disable"
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+  db: 0
+
+minio:
+  endpoint: "localhost:9000"
+  access_key: "minioadmin"
+  secret_key: "minioadmin"
+  bucket: "browser-automation"
+  use_ssl: false
+
+browser:
+  ws_endpoint: "ws://localhost:9222"
+  headless: true
+  timeout: 30000  # 毫秒
+
+# 默认 LLM 配置（可被用户配置覆盖）
+llm:
+  default_provider: "openai"
+  providers:
+    openai:
+      endpoint: "https://api.openai.com/v1"
+      model: "gpt-4o"
+    anthropic:
+      endpoint: "https://api.anthropic.com/v1"
+      model: "claude-sonnet-4-20250514"
+    ollama:
+      endpoint: "http://localhost:11434/v1"
+      model: "llama3.1"
+
+# 文档生成配置
+docgen:
+  output_dir: "/tmp/docs"
+  screenshot_quality: 90
+  supported_formats:
+    - markdown
+    - html
+    - pdf
+    - docx

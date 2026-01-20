@@ -1,0 +1,52 @@
+# 编译产物
+main
+server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+
+# Go 相关
+vendor/
+go.work
+go.work.sum
+
+# 依赖目录
+node_modules/
+
+# 环境配置（敏感信息）
+.env
+.env.local
+.env.*.local
+
+# IDE 和编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# 日志和临时文件
+*.log
+tmp/
+temp/
+.cache/
+
+# 测试覆盖率
+coverage/
+*.out
+
+# Next.js (frontend)
+.next/
+out/
+
+# 调试
+__debug_bin*
